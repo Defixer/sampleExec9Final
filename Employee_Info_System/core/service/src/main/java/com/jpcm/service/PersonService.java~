@@ -1,0 +1,33 @@
+package com.ervein.service;
+import com.ervein.model.*;
+import com.ervein.dao.*;
+import com.ervein.dto.*;
+import com.ervein.commons.PanelSetter;
+import java.text.SimpleDateFormat;
+import java.awt.GridLayout;
+import java.awt.Font;
+import java.io.*;
+import javax.swing.*;
+import java.util.*;
+
+public interface PersonService {
+	
+	public List<PersonDTO> getAndSortPerson (String action);
+	public List<PersonDTO> searchPerson (String searchType, String searchValue);
+	public void saveNewPerson (Set<RoleDTO> roleNameDTOs);
+	public void saveNewPersonFromFile (Set<RoleDTO> roleNameDTOs, String filePath);
+	public Set<RoleDTO> getRoleNames();
+	public List<PersonDTO> fetchPersonById(Long id);
+	public void deletePerson(Long id);
+	public void saveEditedPerson(List<PersonDTO> personDTOs, Set<RoleDTO> roleNameDTOs);
+	public void saveEditedContact(List<PersonDTO> personDTOs, Set<RoleDTO> roleNameDTOs);
+	public void deleteContact(Long id, Long deleteContact);
+	public void addPersonRole(Long id);
+	public void deletePersonRole(Long id);
+	public Set<Role> fetchRoles();
+	public String checkRole(String newRole);
+	public void addRole(String newRole);
+	public String deleteRole(Long id);
+	public RoleDTO fetchRole (Long id);
+}
+

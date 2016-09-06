@@ -1,0 +1,23 @@
+package com.jpcm.commons;
+import com.jpcm.model.*;
+import com.jpcm.dto.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.io.*;
+
+public interface PanelSetter{
+    public PersonAddressDTO setNewAddress (PersonAddressDTO addressDTO);
+    public PersonContactDTO setContactForNewPErson (PersonContactDTO contactDTOs);
+	public PersonDTO setNewPerson (PersonDTO personDTO, PersonAddressDTO addressDTO, 
+        Set<PersonContactDTO> contactDTOs, Set<RoleDTO> roleNameDTOs);
+    public PersonAddressDTO setNewAddressFromFile (PersonAddressDTO addressDTO, String filePath);
+    public PersonContactDTO setContactForNewPErsonFromFile (PersonContactDTO contactDTOs, String filePath);
+    public PersonDTO setNewPersonFromFile (PersonDTO personDTO, PersonAddressDTO addressDTO, 
+        Set<PersonContactDTO> contactDTOs, Set<RoleDTO> roleNameDTOs, String filePath);
+	public PersonDTO setEditedContact (PersonDTO personDTO, Set<PersonContactDTO> contactDTOs);
+	public Set<PersonContactDTO> setContactForEditPErson (Set<PersonContactDTO> contactDTOs);
+    public PersonDTO setNewPersonRole (PersonDTO personDTO, Set<RoleDTO> roleDTOs);
+    public PersonDTO setDeletePersonRole (PersonDTO personDTO);
+    public List<String> splitFileContent (String filePath);
+}
+

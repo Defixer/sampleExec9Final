@@ -1,0 +1,144 @@
+==========================================================
+HOME    HOME    HOME    HOME    HOME    HOME    VIHOMEEW
+==========================================================
+label.title         =   Masantos Ya Inkasabi ed Exist Persons!
+label.view          =   Ipanengneng
+label.addNewPerson  =   Man-arom ya Tuo
+label.addNewPersonF =   Man-Upload tan Man-arom ya Tuo 
+
+
+==========================================================
+VIEW    VIEW    VIEW    VIEW    VIEW    VIEW    VIEW
+==========================================================
+label.viewTitle     =   Listaan ya Tutoo
+label.viewSearchBy  =   Man-anap Ya
+label.viewLastname  =   Apelyido
+label.viewDateHired =   Agew ya na-hire
+label.viewRole      =   Betang
+label.viewSearch    =   Man-anap
+label.viewSortBy    =   I-salansan ya
+label.viewSGrade    =   Grado
+label.viewSort      =   Salansan
+label.viewId        =   ID
+label.viewName      =   NGARAN
+label.viewAddress   =   PANAAYAMAN
+label.viewMobile    =   NUMERO YA CELLPHONE
+label.viewLandline  =   NUMERA YA LANDLINE
+label.viewEmail     =   EMAIL
+label.viewAge       =   TAWEN
+label.viewGender    =   KASARIAN
+label.viewBirthday  =   AGEW YA KAPANGANAKAN
+label.viewGrade     =   GRADO
+label.viewDatehired =   AGEW YA NAHIRE
+label.viewEmployed  =   MANATRABAHO NATAN
+label.Roles         =   BETANG
+label.viewAction    =   AKSYON
+label.viewAddNew    =   MAN-AROM YA TUO
+label.viewHome      =   Abong
+label.viewRoles     =   Ipanengneng iray Betang
+
+
+==========================================================
+ADDNEWPERSON  ADDNEWPERSON  ADDNEWPERSON  ADDNEWPERSON  
+==========================================================
+label.addPTitle      =   Man-arom ya Tuo
+label.addPRequired   =   *Igdan ya Fields
+label.addPName       =   NGARAN:
+label.addPTName      =   Titulo
+label.addPFName      =   Unaan ya Ngaran
+label.addPMName      =   Pegley ya Ngaran
+label.addPLName      =   Apelyido
+label.addPSName      =   Utit ya Ngaran
+label.addPAddress    =   PANAAYAMAN:
+label.addPHouseNo    =   Numero ya Abong
+label.addPStreet     =   Street
+label.addPBarangay   =   Barangay*
+label.addPTown       =   Baley*
+label.addPProvince   =   Probinsya*
+label.addPZipCode    =   Zip Code*
+label.addPContacts   =   KONTAKS:
+label.addPMobile     =   Numero ya Cellphone
+label.addPLandline   =   Numero ya Landline
+label.addPEmail      =   Email
+label.addPAge        =   Tawen:
+label.addPGender     =   KASARIAN:
+label.addPMale       =   Laki
+label.addPFemale     =   Bie
+label.addPBirthday   =   AGEW YA KAPANGANAKAN:
+label.addPGrade      =   GRADO:
+label.addPDateHired  =   AGEW YA NAHIRE:
+label.addPEmployed   =   MANATRABAHO NATAN:
+label.addPYes        =   Yes
+label.addPNo         =   No
+label.addPRoles      =   BETANG:
+label.addPSave       =   I-Save so Balon Tuo
+label.addPCancel     =   Kansela
+label.addETitle      =   Saltan
+label.addESave       =   I-Save so Tuo
+
+
+==========================================================
+EDITCONTACT     EDITCONTACT     EDITCONTACT    EDITCONTACT
+==========================================================
+label.EditTitle      =   Saltan so Kontak ya Tuo
+label.EditExist      =   IRAY KONTAK TO:
+label.EditMobile     =   Numero ya Cellphone
+label.EditLandline   =   Numero ya Landline
+label.EditEmail      =   Email
+label.EditAddNEw     =   MAN-AROM Ya BALON KONTAK: 
+label.EditSave       =   I-Save so Kontak
+label.EditCancel     =   Kansela
+
+
+==========================================================
+ADDPERSONROLE  ADDPERSONROLE  ADDPERSONROLE  ADDPERSONROLE   
+==========================================================
+label.PRoleTitle    =   Man-Arom ya Betang ya Tuo
+label.PRoleRoles    =   BETANG:
+label.PRoleSave     =   I-Save so Betang ya Tuo
+label.PRoleCancel   =   Kansela
+label.PRoleTitle2   =   Man-Ekal ya Betang ya Tuo
+label.PRoleDelete   =   Ikalen so apili ya Betang ya Tuo
+
+
+==========================================================
+ROLES   ROLES   ROLES   ROLES   ROLES   ROLES   ROLES   
+==========================================================
+label.RoleTitle    =   Listaan ya Betang
+label.RoleName     =   NGARAN YA BETANG
+label.RoleAction   =   AKSYON
+label.RoleBack     =   Unpawil
+label.RoleAddNew   =   Man-Arom ya Balon Betang:
+label.RoleAdd      =   Man-Arom ya Betan
+   
+
+==========================================================
+HREF   HREF   HREF   HREF   HREF   HREF   HREF   HREF   
+==========================================================
+label.HrefEditPerson   =   Mansalat ya Tuo
+label.HrefDeletePerson =   Man-ekal ya Tuo
+label.HrefEditContact  =   Mansalat ya Kontak
+label.HrefAddPROle     =   Man-Arom ya Betang ya Tuo
+label.HrefDeletePRole  =   Man-ekal ya Betang ya Tuo
+label.HrefDelete       =   Ekalen 
+
+
+==========================================================
+UPLOAD  UPLOAD  UPLOAD  UPLOAD  UPLOAD  UPLOAD  UPLOAD  
+==========================================================
+label.UploadTitle      =   Man-Upload tan Manarom ya Tuo
+label.UploadFile       =   File ya i-upload:
+label.UploadButton     =   I-Upload 
+
+
+
+
+
+
+
+
+
+
+
+
+

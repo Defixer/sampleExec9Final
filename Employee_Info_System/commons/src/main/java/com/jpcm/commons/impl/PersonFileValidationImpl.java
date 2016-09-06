@@ -1,0 +1,227 @@
+package com.jpcm.commons.impl;
+import com.jpcm.commons.PanelSetter;
+import com.jpcm.commons.PersonFileValidation;
+import java.text.SimpleDateFormat;
+import java.io.*;
+import java.util.*;
+import org.apache.commons.lang3.StringUtils;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class PersonFileValidationImpl implements PersonFileValidation{
+   private PanelSetter setter;
+   String errorMessage;
+   String id;
+	 String firstName;
+	 String middleName;
+	 String lastName;
+	 String suffixName;
+	 String titleName;
+	 String addStreet;
+	 String addBarangay;
+	 String addCityMunicipality;
+	 String addZipCode;
+	 String mobileNumber;
+	 String landLineNumber;
+	 String emailAddress;
+	 String birthday;
+	 String grade;
+	 String dateHired;
+	 String currentlyEmployed;
+	 
+	public void setSetter (PanelSetter setter) {
+	    this.setter = setter;
+	}
+    
+    @Override
+	public String checkAddPersonByFile (String filePath) {
+	    List<String> contents = setter.splitFileContent(filePath);
+	    setFields(contents);
+	    errorMessage = "";
+	    if ( /*checkNameAndAddress() || */checkIfNumber() || checkEMail() || checkIfValidDate() || checkIfEmpty() ) {
+	        return errorMessage;
+	    }
+	    return "Clear";
+	}
+	
+	@Override
+	public void setFields(List<String> contents) {
+	    for (String content : contents) {
+            String parts[] = content.split(": ");
+            if (parts[0].equals("Street")) {
+                addStreet = parts[1];
+            }
+            if (parts[0].equals("Barangay")) {
+                addBarangay = parts[1];
+            }
+            if (parts[0].equals("CityMunicipality")) {
+                addCityMunicipality = parts[1];
+            }
+            if (parts[0].equals("ZipCode")) {
+                addZipCode = parts[1];
+            }
+            if (parts[0].equals("Mobile")) {
+                mobileNumber = parts[1];
+            }
+            if (parts[0].equals("Landline")) {
+                landLineNumber = parts[1];
+            }
+            if (parts[0].equals("Email")) {
+                emailAddress = parts[1];
+            }
+            if (parts[0].equals("FirsName")) {
+                firstName = parts[1];
+            }
+            if (parts[0].equals("MiddleName")) {
+                middleName = parts[1];
+            }
+            if (parts[0].equals("LastName")) {
+                lastName = parts[1];
+            }
+            if (parts[0].equals("TitleName")) {
+                titleName = parts[1];
+            }
+            if (parts[0].equals("SuffixName")) {
+                suffixName = parts[1];
+            }
+            if (parts[0].equals("Birthday")) {
+                birthday = parts[1];
+            }
+            if (parts[0].equals("Grade")) {
+                grade = parts[1];
+            }
+            if (parts[0].equals("DateHired")) {
+                dateHired = parts[1];
+            }
+            if (parts[0].equals("Employed")) {
+                currentlyEmployed = parts[1];
+            }
+        }
+	}
+	
+	@Override
+	public boolean checkIfEmpty () {
+	    if ( checkNull(firstName, "First Name") || checkNull(middleName, "Middle Name") || checkNull(lastName, "Last Name")
+	            || checkNull(addBarangay, "Barangay") || checkNull(addCityMunicipality, "CityMunicipality") 
+	            || checkNull(addZipCode, "Zip Code") || checkNull(birthday, "Birthday") 
+	            || checkNull(dateHired, "Date Hired") || checkNull(addZipCode, "Zip Code") ) {
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean checkIfNumber () {
+	    if ( checkNumber(mobileNumber, "Mobile Number") || 
+	            checkNumber(landLineNumber, "Landline Number") || checkNumber(addZipCode, "Zip Code") ) {
+	        return true;
+	    }
+	    return false;
+	}
+	
+	/*@Override
+	public boolean checkNameAndAddress () {
+	    if ( checkText(firstName, "First Name") || checkText(middleName, "Middle Name") || checkText(lastName, "Last Name") ||
+	           checkText(addStreet, "Street") || checkText(addBarangay, "Barangay") || checkText(addTown, "Town") || 
+	           checkText(addProvince, "Province")  ) {
+	        return true;
+	    }
+	    return false;
+	}*/
+	
+	@Override
+	public boolean checkIfValidDate () {
+	    if ( checkDate(birthday, "Birthday") || checkDate(dateHired, "Hired Date") ) {
+	        return true;
+	    }
+	    return false;
+	}
+    
+    @Override
+	public boolean checkEMail () {
+	    if ( !emailAddress.equals("") ) {
+            if (!emailAddress.matches("[a-zA-Z0-9]+@[a-z]+\\.[a-z]{2,3}") && 
+                    !emailAddress.matches("[a-zA-Z0-9]+\\.[a-zA-Z0-9]+@[a-z]+\\.[a-z]{2,3}")) {
+                errorMessage = "File contains invalid E-Mail!";
+                return true;
+            }
+        }
+	    return false;
+	}
+	
+	@Override
+    public boolean checkDate( String field, String messageSubject ) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        if ( !field.equals(" ") ) {
+            try {
+                sdf.parse(field);
+                return false;
+            }
+            catch(Exception ex) {
+                errorMessage = "File contains invalid " + messageSubject + "!";
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	/*@Override
+	public boolean checkText ( String field, String messageSubject ) {
+	    if ( !field.equals(" ") ) {
+	        if (!field.matches("[A-Z][a-z]*") && !field.matches("[A-Z][a-z]*+[ -][A-Z][a-z]*")) {
+	            errorMessage = "File contains invalid " + messageSubject + "!";
+	            return true;
+	        }
+	    }
+	    
+	    return false;
+	}*/
+	
+	@Override
+	public boolean checkNumber (String field, String messageSubject) {
+	    if ( !field.equals(" ") ) {
+            try {
+	            double num = Double.parseDouble(field);
+	        }
+	        catch (Exception e) {
+	             errorMessage = "File contains invalid " + messageSubject + "!";
+	             return true;
+	        }
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean checkNull (String field, String messageSubject) {
+	    if ( (field == null) || field.equals("") || field.equals(" ") ) {
+            errorMessage = "File contains null " + messageSubject + "!";
+            return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean checkEditContact () {
+	    if ( checkMobileAndLandline() || checkEMail() ) {
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean checkMobileAndLandline() {
+	    if ( !mobileNumber.equals(" ") ) {
+            if (!StringUtils.isNumeric(mobileNumber)) {
+                errorMessage = "File contains invalid Mobile Number!";
+                return true;
+            }
+        }
+        if ( !landLineNumber.equals(" ") ) {
+            if (!StringUtils.isNumeric(landLineNumber)) {
+                errorMessage = "File contains invalid Landline Number!";
+                return true;
+            }
+        }
+	    return false;
+	}
+}

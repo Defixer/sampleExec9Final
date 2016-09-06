@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+    monitoring="autodetect" dynamicConfig="true">
+ 
+    <diskStore path="infra/persistence/src/main/resources/temp/cache" />
+ 
+    <defaultCache eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120" />
+ 
+    <cache
+        name="ROLE"
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+    />
+    
+    <cache
+        name="PERSON"
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+    />
+    
+    <cache name="CONTACT"  eternal="true" />
+    
+    <cache name="ADDRESS"  eternal="true" />
+</ehcache>
